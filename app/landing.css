@@ -1,0 +1,89 @@
+/* The landing page. Dark, one accent, mono labels: the war room's own look. */
+.ld { --wrap: 1200px; --gut: clamp(16px, 4vw, 40px); background: var(--bg); color: var(--fg); }
+.ld-wrap { width: min(var(--wrap), 100% - 2 * var(--gut)); margin-inline: auto; }
+.ld-skip { position: absolute; left: 12px; top: -60px; z-index: 50; padding: .7rem 1rem; background: var(--fg); color: var(--bg); border-radius: var(--radius-sm); }
+.ld-skip:focus { top: 12px; }
+.ld :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.ld-nav { position: sticky; top: 0; z-index: 20; background: rgb(10 10 10 / .78); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid rgb(255 255 255 / .06); }
+.ld-nav-row { display: flex; align-items: center; gap: 1.5rem; min-height: 64px; }
+.ld-brand { display: inline-flex; align-items: center; gap: .55rem; min-height: var(--hit); font: 600 .95rem/1 var(--font-code); letter-spacing: .18em; color: var(--fg); text-decoration: none; }
+.ld-links { display: flex; gap: .25rem; margin-left: auto; }
+.ld-links a { display: inline-flex; align-items: center; min-height: var(--hit); padding: 0 .7rem; font: 500 .74rem/1 var(--font-code); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); text-decoration: none; background: linear-gradient(var(--accent), var(--accent)) no-repeat 50% 78% / 0 1px; transition: color var(--dur-1) var(--ease-out), background-size var(--dur-2) var(--ease-out); }
+.ld-links a:hover { color: var(--fg); background-size: calc(100% - 1.4rem) 1px; }
+
+.ld-hero { position: relative; isolation: isolate; min-height: calc(100svh - 64px); display: grid; align-items: center; overflow: hidden; padding: 3rem 0; }
+.ld-hero-bg { position: absolute; inset: 0; z-index: -1; opacity: .9; }
+.ld-hero-fade { position: absolute; inset: 0; background: linear-gradient(90deg, var(--bg) 0%, rgb(10 10 10 / .92) 38%, rgb(10 10 10 / .5) 70%, rgb(10 10 10 / .7) 100%), linear-gradient(transparent 70%, var(--bg)); }
+.ld-hero-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 4vw, 4rem); align-items: start; }
+.ld-kicker { font: 500 .72rem/1.4 var(--font-code); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.ld h1 { margin: 1rem 0 0; font: 600 clamp(2.6rem, 5.4vw, 4.6rem)/.98 var(--font-code); letter-spacing: -0.045em; }
+.ld-sub { margin-top: 1.4rem; max-width: 34rem; font-size: 1.12rem; line-height: 1.5; color: rgb(242 242 240 / .76); }
+.ld-actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 2rem; }
+.ld-fact { margin-top: 1.4rem; font: 500 .78rem/1.5 var(--font-code); color: var(--muted); }
+.ld-frame { border: 1px solid rgb(255 255 255 / .12); border-radius: var(--radius); overflow: hidden; background: #0c0c0b; box-shadow: 0 0 0 1px rgb(255 77 0 / .08), 0 30px 80px rgb(0 0 0 / .65); }
+.ld-frame img { display: block; width: 100%; height: auto; }
+.ld-frame-bar { display: flex; align-items: center; gap: 6px; padding: 9px 12px; border-bottom: 1px solid rgb(255 255 255 / .07); }
+.ld-frame-bar i { width: 9px; height: 9px; border-radius: 50%; background: #2a2a28; }
+.ld-frame-bar span { margin-left: 10px; font: 400 .7rem/1 var(--font-code); color: var(--muted); }
+
+.ld-sec { min-height: 100svh; display: grid; align-items: center; padding: 6rem 0; border-top: 1px solid rgb(255 255 255 / .05); }
+.ld h2 { margin: 0; font: 600 clamp(2rem, 3.6vw, 3rem)/1.02 var(--font-code); letter-spacing: -0.04em; max-width: 18ch; }
+.ld h3 { margin: 0; font: 600 1rem/1.2 var(--font-code); letter-spacing: -0.01em; }
+.ld-lede { margin-top: 1rem; max-width: 36rem; font-size: 1.05rem; line-height: 1.5; color: rgb(242 242 240 / .72); }
+.ld-note { margin-top: .9rem; font-size: .9rem; line-height: 1.5; color: var(--muted); }
+.ld-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+
+.ld-flow { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.2fr) minmax(0, 1fr); gap: 1rem; margin-top: 3rem; align-items: stretch; }
+.ld-card { padding: 1.2rem; border: 1px solid rgb(255 255 255 / .08); border-radius: var(--radius); background: rgb(255 255 255 / .02); transition: transform var(--dur-2) var(--ease-out), border-color var(--dur-2) var(--ease-out); }
+.ld-card:hover { transform: translateY(-2px); border-color: rgb(255 255 255 / .16); }
+.ld-step { font: 500 .68rem/1 var(--font-code); letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+.ld-order { padding: .85rem .9rem; border: 1px solid color-mix(in oklab, var(--accent) 55%, transparent); border-radius: var(--radius-sm); background: rgb(10 10 10 / .8); font-size: .95rem; }
+.ld-order span { font: 600 .68rem/1 var(--font-code); letter-spacing: .12em; color: var(--accent); margin-right: .4rem; }
+.ld-tasks, .ld-intel { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+.ld-tasks li, .ld-intel li { display: grid; gap: .3rem; padding: .7rem .75rem; border-radius: var(--radius-sm); background: rgb(255 255 255 / .025); border: 1px solid rgb(255 255 255 / .05); }
+.ld-row { display: flex; align-items: center; gap: .5rem; font: 500 .66rem/1 var(--font-code); letter-spacing: .1em; }
+.ld-row em { font-style: normal; padding: .2rem .35rem; border: 1px solid rgb(255 255 255 / .1); border-radius: 2px; color: var(--muted); }
+.ld-row span { margin-left: auto; } .ld-row .ok { color: var(--ok); } .ld-row .hot { color: var(--accent); }
+.ld-t { font-size: .88rem; line-height: 1.3; }
+.ld-m { font: 400 .66rem/1.3 var(--font-code); color: var(--muted); } .ld-m b { color: var(--fg); font-weight: 500; }
+
+.ld-copy { display: flex; gap: .5rem; align-items: stretch; margin-top: 1.6rem; max-width: 100%; }
+.ld-copy code { flex: 1; min-width: 0; white-space: pre-wrap; overflow-wrap: anywhere; font: 400 .82rem/1.5 var(--font-code); padding: 1rem .9rem; background: #0e0e0d; border: 1px solid rgb(255 255 255 / .1); border-radius: var(--radius-sm); }
+.ld-tools { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; background: rgb(255 255 255 / .06); border: 1px solid rgb(255 255 255 / .06); border-radius: var(--radius); overflow: hidden; }
+.ld-tools li { display: grid; grid-template-columns: 11rem 1fr; gap: 1rem; align-items: center; padding: 1rem 1.1rem; background: var(--bg); }
+.ld-tools code { font: 500 .8rem/1 var(--font-code); color: var(--accent); }
+.ld-tools span { font-size: .9rem; color: rgb(242 242 240 / .78); }
+
+.ld-feeds { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; gap: .7rem; }
+.ld-feeds li { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; font-size: .92rem; padding-bottom: .7rem; border-bottom: 1px solid rgb(255 255 255 / .06); }
+.ld-feeds b { font: 500 .74rem/1.6 var(--font-code); letter-spacing: .1em; text-transform: uppercase; }
+.ld-feeds span { color: var(--muted); }
+.ld-map { aspect-ratio: 1; width: 100%; max-height: 72svh; justify-self: center; }
+
+.ld-modes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: 3.5rem; }
+.ld-modes-h { margin-top: 4rem; font: 500 .72rem/1 var(--font-code); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.ld-close h2 { max-width: none; }
+.ld-close .ld-copy { max-width: 46rem; }
+
+.ld-foot { border-top: 1px solid rgb(255 255 255 / .06); padding: 2rem 0; font-size: .82rem; color: var(--muted); }
+.ld-foot-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .8rem 2rem; }
+.ld-foot a { color: var(--fg); text-underline-offset: 3px; }
+
+@media (max-width: 980px) {
+  .ld-hero-grid, .ld-split { grid-template-columns: minmax(0, 1fr); }
+  .ld-flow { grid-template-columns: minmax(0, 1fr); }
+  .ld-modes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ld-sec { padding: 5rem 0; }
+  .ld-hero-fade { background: rgb(10 10 10 / .9); }
+  .ld-hero-shot { margin-top: 0; }
+  .ld-map { max-width: 560px; }
+}
+@media (max-width: 640px) {
+  .ld-links { display: none; } .ld-nav-cta { margin-left: auto; }
+  .ld-modes { grid-template-columns: minmax(0, 1fr); }
+  .ld-actions .sk-btn { width: 100%; justify-content: center; }
+  .ld-copy { flex-direction: column; }
+  .ld-tools li { grid-template-columns: minmax(0, 1fr); gap: .3rem; }
+  .ld-feeds li { grid-template-columns: minmax(0, 1fr); gap: .2rem; }
+}
